@@ -33,16 +33,16 @@ export async function GET(request: NextRequest) {
     })
 
     if (!user?.hasAccess) {
-      const filteredMessages = messages.map(message => {
-        if (message.type !== "TEXT") {
-          return {
-            ...message,
-            content: "🔒 Conteúdo bloqueado - Requer acesso premium",
-            type: "BLOCKED" as any
+              const filteredMessages = messages.map(message => {
+          if (message.type !== "TEXT") {
+            return {
+              ...message,
+              content: "🔒 Conteúdo bloqueado - Requer acesso premium",
+              type: "BLOCKED" as const
+            }
           }
-        }
-        return message
-      })
+          return message
+        })
       return NextResponse.json(filteredMessages)
     }
 
