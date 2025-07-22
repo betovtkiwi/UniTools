@@ -2,12 +2,18 @@
   "name": "dashboard-privada",
   "version": "0.1.0",
   "private": true,
+  "description": "Dashboard privada com sistema de autenticação e chat",
+  "main": "index.js",
+  "keywords": ["nextjs", "dashboard", "chat", "marketplace"],
+  "author": "Your Name",
+  "license": "MIT",
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "db:seed": "tsx prisma/seed.ts"
+    "db:seed": "tsx prisma/seed.ts",
+    "postinstall": "prisma generate"
   },
   "prisma": {
     "seed": "tsx prisma/seed.ts"

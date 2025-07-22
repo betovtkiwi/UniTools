@@ -1,0 +1,35 @@
+{
+  "name": "dashboard-privada",
+  "description": "Dashboard privada com sistema de autenticação baseado em webhook",
+  "website": "https://dashboard-privada.vercel.app",
+  "repository": "https://github.com/user/dashboard-privada",
+  "success_url": "/",
+  "env": {
+    "NEXTAUTH_URL": {
+      "description": "URL da aplicação para NextAuth",
+      "value": "https://dashboard-privada.vercel.app"
+    },
+    "NEXTAUTH_SECRET": {
+      "description": "Secret para NextAuth",
+      "generator": "secret"
+    },
+    "JWT_SECRET": {
+      "description": "Secret para JWT",
+      "generator": "secret"
+    },
+    "WEBHOOK_SECRET": {
+      "description": "Secret para webhook de compras",
+      "generator": "secret"
+    }
+  },
+  "formation": {
+    "web": {
+      "quantity": 1
+    }
+  },
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ]
+}

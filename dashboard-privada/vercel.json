@@ -1,0 +1,25 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/next"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/"
+    }
+  ],
+  "env": {
+    "NEXTAUTH_URL": "https://dashboard-privada.vercel.app",
+    "NEXTAUTH_SECRET": "your-secret-key-change-this-in-production",
+    "JWT_SECRET": "your-jwt-secret-change-this-in-production",
+    "WEBHOOK_SECRET": "your-webhook-secret-change-this-in-production"
+  },
+  "installCommand": "npm install",
+  "buildCommand": "npm run build",
+  "devCommand": "npm run dev",
+  "framework": "nextjs"
+}
